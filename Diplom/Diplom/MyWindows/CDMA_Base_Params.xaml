@@ -1,0 +1,19 @@
+﻿<Window x:Class="Diplom.MyWindows.CDMA_Base_Params"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Параметры базовой станции CDMA" Height="300" Width="300" WindowStyle="ToolWindow" Background="{DynamicResource Бекграунд_зеленый}" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Canvas>
+    	<TextBlock Canvas.Left="27" TextWrapping="Wrap" Canvas.Top="88" Width="100" Height="20" Margin="0,10,0,0"><Run Language="ru-ru" Text="Мощность "/><Run Text="P ("/><Run Language="ru-ru" Text="Вт"/><Run Text="):"/></TextBlock>
+    	<TextBlock Canvas.Left="27" TextWrapping="Wrap" Canvas.Top="122" Width="100" Height="20" Margin="0,10,0,0"><Run Language="ru-ru" Text="Усиление "/><Run Text="G ("/><Run Language="ru-ru" Text="дБ"/><Run Text="):"/></TextBlock>
+    	<TextBox Name="P" Canvas.Left="156" TextWrapping="Wrap" Text="" Canvas.Top="88" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right" Margin="0,10,0,0"/>
+    	<TextBox Name="G" Canvas.Left="156" TextWrapping="Wrap" Text="" Canvas.Top="122" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right" Margin="0,10,0,0"/>
+    	<TextBlock Canvas.Left="27" TextWrapping="Wrap" Canvas.Top="156" Width="113" Height="20" Margin="0,10,0,0"><Run Language="ru-ru" Text="Ослабление "/><Run Text="L ("/><Run Language="ru-ru" Text="дБ"/><Run Text="):"/></TextBlock>
+    	<TextBox Name="L" Canvas.Left="156" TextWrapping="Wrap" Text="" Canvas.Top="156" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right" Margin="0,10,0,0"/>
+        <Button Name="Cansel" Click="Cansel_Click" Content="Отмена" Canvas.Left="201" Canvas.Top="237.04" Width="75"/>
+        <Button Name="Ok" Click="Ok_Click" Content="Ок" Canvas.Left="104" Canvas.Top="237.04" Width="75"/>
+        <TextBlock Canvas.Left="27" TextWrapping="Wrap" Canvas.Top="54" Width="100" Height="20" Margin="0,10,0,0"><Run Language="ru-ru" Text="Частота "/><Run Text="DL ("/><Run Language="ru-ru" Text="МГц"/><Run Text="):"/></TextBlock>
+        <TextBox Name="Fdl" Canvas.Left="156" TextWrapping="Wrap" Text="" Canvas.Top="54" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right" Margin="0,10,0,0"/>
+        <TextBlock Canvas.Left="27" TextWrapping="Wrap" Canvas.Top="30" Width="100" Height="20"><Run Language="ru-ru" Text="Частота "/><Run Text="UL ("/><Run Language="ru-ru" Text="МГц"/><Run Text="):"/></TextBlock>
+        <TextBox Name="Ful" Canvas.Left="156" TextWrapping="Wrap" Text="" Canvas.Top="30" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right"/>
+    </Canvas>
+</Window>

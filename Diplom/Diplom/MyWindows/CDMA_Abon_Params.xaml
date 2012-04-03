@@ -1,0 +1,15 @@
+﻿<Window x:Class="Diplom.MyWindows.CDMA_Abon_Params"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Параметры абонетских станций CDMA" Height="300" Width="300" WindowStyle="ToolWindow" Background="{DynamicResource Бекграунд_зеленый}" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+	<Canvas Margin="0,0,0,-5">
+		<Button Name="Cansel" Click="Cansel_Click" Content="Отмена" Canvas.Left="201" Canvas.Top="237.04" Width="75"/>
+		<Button Name="Ok" Click="Ok_Click" Content="Ок" Canvas.Left="104" Canvas.Top="237.04" Width="75"/>
+		<TextBlock Canvas.Left="32" TextWrapping="Wrap" Canvas.Top="38" Width="100" Height="20"><Run Language="ru-ru" Text="Мощность "/><Run Text="P ("/><Run Language="ru-ru" Text="Вт"/><Run Text="):"/></TextBlock>
+		<TextBlock Canvas.Left="32" TextWrapping="Wrap" Canvas.Top="77" Width="100" Height="20"><Run Language="ru-ru" Text="Усиление "/><Run Text="G ("/><Run Language="ru-ru" Text="дБ"/><Run Text="):"/></TextBlock>
+		<TextBox Name="P" Canvas.Left="161" TextWrapping="Wrap" Text="" Canvas.Top="38" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right"/>
+		<TextBox Name="G" Canvas.Left="161" TextWrapping="Wrap" Text="" Canvas.Top="77" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right"/>
+		<TextBlock Canvas.Left="32" TextWrapping="Wrap" Canvas.Top="116" Width="110" Height="20"><Run Language="ru-ru" Text="Ослабление "/><Run Text="L ("/><Run Language="ru-ru" Text="дБ"/><Run Text="):"/></TextBlock>
+		<TextBox Name="L" Canvas.Left="161" TextWrapping="Wrap" Text="" Canvas.Top="116" Height="20" Width="100" Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" TextAlignment="Right"/>
+	</Canvas>
+</Window>

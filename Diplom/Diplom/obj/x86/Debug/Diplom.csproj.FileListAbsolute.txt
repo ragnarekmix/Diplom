@@ -1,0 +1,136 @@
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\bin\Debug\Diplom.exe
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\bin\Debug\Diplom.pdb
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\App.g.cs
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\Diplom_MarkupCompile.cache
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\Diplom.g.resources
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\Diplom.Properties.Resources.resources
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\Diplom.exe
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\Diplom.pdb
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\App.baml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MainWindow.baml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MainWindow.g.cs
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\About.baml
+C:\Users\root\Documents\Visual Studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\About.g.cs
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.baml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.baml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.baml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.baml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.g.cs
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.g.cs
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.g.cs
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.g.cs
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\Microsoft.Expression.Drawing.dll
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\Microsoft.Expression.Drawing.xml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\Diplom.exe.manifest
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\Diplom.application
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\Diplom.exe.manifest
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\obj\x86\Debug\Diplom.application
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\DynamicDataDisplay.dll
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\DynamicDataDisplay.xml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\ru-ru\DynamicDataDisplay.resources.dll
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\DynamicDataDisplay.Controls.dll
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\DynamicDataDisplay.Controls.xml
+C:\Users\root\documents\visual studio 2010\Projects\Diplom\Diplom\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\Diplom\Diplom\obj\x86\Debug\Diplom.exe
+D:\Diplom\Diplom\obj\x86\Debug\Diplom.pdb
+D:\Diplom\Diplom\bin\Debug\Diplom.exe.manifest
+D:\Diplom\Diplom\bin\Debug\Diplom.application
+D:\Diplom\Diplom\bin\Debug\Diplom.exe
+D:\Diplom\Diplom\bin\Debug\Diplom.pdb
+D:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.xml
+D:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.Controls.xml
+D:\Diplom\Diplom\bin\Debug\Microsoft.Expression.Drawing.xml
+D:\Diplom\Diplom\bin\Debug\ru-ru\DynamicDataDisplay.resources.dll
+D:\Diplom\Diplom\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Diplom\Diplom\obj\x86\Debug\MainWindow.baml
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\About.baml
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.baml
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.baml
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.baml
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.baml
+D:\Diplom\Diplom\obj\x86\Debug\App.baml
+D:\Diplom\Diplom\obj\x86\Debug\MainWindow.g.cs
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\About.g.cs
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.g.cs
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.g.cs
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.g.cs
+D:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.g.cs
+D:\Diplom\Diplom\obj\x86\Debug\App.g.cs
+D:\Diplom\Diplom\obj\x86\Debug\Diplom_MarkupCompile.cache
+D:\Diplom\Diplom\obj\x86\Debug\Diplom.g.resources
+D:\Diplom\Diplom\obj\x86\Debug\Diplom.Properties.Resources.resources
+D:\Diplom\Diplom\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Diplom\Diplom\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Diplom\Diplom\obj\x86\Debug\Diplom.exe.manifest
+D:\Diplom\Diplom\obj\x86\Debug\Diplom.application
+H:\Diplom\Diplom\obj\x86\Debug\Diplom.exe
+H:\Diplom\Diplom\obj\x86\Debug\Diplom.pdb
+H:\Diplom\Diplom\bin\Debug\Diplom.exe.manifest
+H:\Diplom\Diplom\bin\Debug\Diplom.application
+H:\Diplom\Diplom\bin\Debug\Diplom.exe
+H:\Diplom\Diplom\bin\Debug\Diplom.pdb
+H:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.Controls.dll
+H:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.dll
+H:\Diplom\Diplom\bin\Debug\Microsoft.Expression.Drawing.dll
+H:\Diplom\Diplom\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+H:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.xml
+H:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.Controls.xml
+H:\Diplom\Diplom\bin\Debug\Microsoft.Expression.Drawing.xml
+H:\Diplom\Diplom\bin\Debug\ru-ru\DynamicDataDisplay.resources.dll
+H:\Diplom\Diplom\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Diplom\Diplom\obj\x86\Debug\MainWindow.baml
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\About.baml
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.baml
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.baml
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.baml
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.baml
+H:\Diplom\Diplom\obj\x86\Debug\App.baml
+H:\Diplom\Diplom\obj\x86\Debug\MainWindow.g.cs
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\About.g.cs
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.g.cs
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.g.cs
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.g.cs
+H:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.g.cs
+H:\Diplom\Diplom\obj\x86\Debug\App.g.cs
+H:\Diplom\Diplom\obj\x86\Debug\Diplom_MarkupCompile.cache
+H:\Diplom\Diplom\obj\x86\Debug\Diplom.g.resources
+H:\Diplom\Diplom\obj\x86\Debug\Diplom.Properties.Resources.resources
+H:\Diplom\Diplom\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\Diplom\Diplom\obj\x86\Debug\GenerateResource.write.1.tlog
+H:\Diplom\Diplom\obj\x86\Debug\Diplom.exe.manifest
+H:\Diplom\Diplom\obj\x86\Debug\Diplom.application
+F:\Diplom\Diplom\obj\x86\Debug\Diplom.exe
+F:\Diplom\Diplom\obj\x86\Debug\Diplom.pdb
+F:\Diplom\Diplom\bin\Debug\Diplom.exe.manifest
+F:\Diplom\Diplom\bin\Debug\Diplom.application
+F:\Diplom\Diplom\bin\Debug\Diplom.exe
+F:\Diplom\Diplom\bin\Debug\Diplom.pdb
+F:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.xml
+F:\Diplom\Diplom\bin\Debug\DynamicDataDisplay.Controls.xml
+F:\Diplom\Diplom\bin\Debug\Microsoft.Expression.Drawing.xml
+F:\Diplom\Diplom\bin\Debug\ru-ru\DynamicDataDisplay.resources.dll
+F:\Diplom\Diplom\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Diplom\Diplom\obj\x86\Debug\MainWindow.baml
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\About.baml
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.baml
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.baml
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.baml
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.baml
+F:\Diplom\Diplom\obj\x86\Debug\App.baml
+F:\Diplom\Diplom\obj\x86\Debug\MainWindow.g.cs
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\About.g.cs
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Abon_Params.g.cs
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\CDMA_Base_Params.g.cs
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Abon_Params.g.cs
+F:\Diplom\Diplom\obj\x86\Debug\MyWindows\GSM_Base_Params.g.cs
+F:\Diplom\Diplom\obj\x86\Debug\App.g.cs
+F:\Diplom\Diplom\obj\x86\Debug\Diplom_MarkupCompile.cache
+F:\Diplom\Diplom\obj\x86\Debug\Diplom.g.resources
+F:\Diplom\Diplom\obj\x86\Debug\Diplom.Properties.Resources.resources
+F:\Diplom\Diplom\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Diplom\Diplom\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Diplom\Diplom\obj\x86\Debug\Diplom.exe.manifest
+F:\Diplom\Diplom\obj\x86\Debug\Diplom.application

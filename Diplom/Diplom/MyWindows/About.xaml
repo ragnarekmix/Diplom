@@ -1,0 +1,10 @@
+﻿<Window x:Class="Diplom.MyWindows.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="О программе" Height="235" Width="384" WindowStyle="ToolWindow" Background="{DynamicResource Бекграунд_зеленый}" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Canvas>
+    	<Image Height="119" Canvas.Top="8" Width="119" Source="/Diplom;component/Images/BaseST.jpg" />
+    	<TextBlock Canvas.Left="127" TextWrapping="Wrap" Text="Данная программа предназначена для исследования электромагнитной совместимости сетей GSM и CDMA в диапазоне 800 - 900 МГц.&#xd;&#xa;" Canvas.Top="8" Height="119" Width="233" Background="White"/>
+        <TextBlock Canvas.Left="8" TextWrapping="Wrap" Text="Разаработчик: Подобивский Михаил, ТС-61М&#xd;&#xa;&#xd;&#xa;Версия: 1.0.0.1&#xd;&#xa;" Canvas.Top="131" Height="53" Width="352" Background="White"/>
+    </Canvas>
+</Window>

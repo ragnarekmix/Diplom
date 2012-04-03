@@ -1,0 +1,360 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Diplom.MyWindows;
+using Diplom.MyClasses;
+using System.Windows.Media.Animation;
+//using SDKSample;
+using System.Drawing;
+using System.Windows.Controls.DataVisualization.Charting;
+
+
+namespace Diplom
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            Setup();
+        }
+
+        #region Обработка кнопок главного окна
+        // Вызов окна О программе
+        private void about_Click(object sender, RoutedEventArgs e)
+        {
+            About about = About.GetAbout();
+            about.Show();
+            about.Activate();
+
+        }
+
+        // Параметры базовой станции GSM
+        private void GSM_base_param_Click(object sender, RoutedEventArgs e)
+        {
+            GSM_Base_Params GSMbase = GSM_Base_Params.GetGSM_Base_Params();
+            GSMbase.Show();
+            GSMbase.Activate();
+        }
+
+        // Параметры абонентской станции GSM
+        private void GSM_abon_param_Click(object sender, RoutedEventArgs e)
+        {
+            GSM_Abon_Params GSMabon = GSM_Abon_Params.GetGSM_Abon_Params();
+            GSMabon.Show();
+            GSMabon.Activate();
+        }
+
+        // Параметры базовой станции CDMA
+        private void CDMA_base_param_Click(object sender, RoutedEventArgs e)
+        {
+            CDMA_Base_Params CDMAbase = CDMA_Base_Params.GetCDMA_Base_Params();
+            CDMAbase.Show();
+            CDMAbase.Activate();
+        }
+
+        // Параметры абонентской станции CDMA
+        private void CDMA_abon_param_Click(object sender, RoutedEventArgs e)
+        {
+            CDMA_Abon_Params CDMAabon = CDMA_Abon_Params.GetCDMA_Abon_Params();
+            CDMAabon.Show();
+            CDMAabon.Activate();
+        }
+
+        // Закрытие программы
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        // Обработка события нажатия кнопки Генерация
+        private void Generation_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Cursor = Cursors.Wait;
+            if (numbOfGsmBase >= 0 & numbOfGsmAbon >= 0 & numbOfCdmaBase >= 0 & numbOfCdmaAbon >= 0)
+            {
+                ClearLists();
+                Cleaning();
+                FillLists();
+                Drawing();
+                statusbar.Text = "Станции успешно сгенерированы: GSM Base-" + gsmBases.Count.ToString() + " Abon-" + gsmAbons.Count.ToString() + " CDMA Base-" + cdmaBases.Count.ToString() + " Abon-" + cdmaAbons.Count.ToString();
+            }
+            else
+            {
+                ClearLists();
+                Cleaning();
+                statusbar.Text = "Введите верное колличество станций";
+            }
+            MainPanel.Cursor = Cursors.Arrow;
+        }
+
+        // Обработка события нажатия на кнопку Очистить
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Cursor = Cursors.Wait;
+            ClearLists();
+            Cleaning();
+            statusbar.Text = "Станции успешно удалены: GSM Base-" + gsmBases.Count.ToString() + " Abon-" + gsmAbons.Count.ToString() + " CDMA Base-" + cdmaBases.Count.ToString() + " Abon-" + cdmaAbons.Count.ToString();
+            MainPanel.Cursor = Cursors.Arrow;
+        }
+
+        // Обработка события нажатия кнопки Рассчета
+        private void kalkulate_Click(object sender, RoutedEventArgs e)
+        {
+            MainPanel.Cursor = Cursors.Wait;
+            foreach (GSM_Base gsmBase in gsmBases)
+            {
+                gsmBase.SetIsum(cdmaBases); // нахождение Isum для каждой GSM базовой станции
+                //  gsmBase.SetCarier(gsmAbons); // нахождение Carier для каждого абонента GSM и станции записанной для него как родительская.
+            }
+            foreach (GSM_Abon abon in gsmAbons)
+            {
+                do
+                {
+                    abon.FindParent(gsmBases); // нахождение ближайшей базовой для GSM абонентов
+                    abon.SetCarier(); // нахождение Carier для каждого абонента
+                    abon.TryToConnect();
+                } while (abon.Orphan && abon.BadParent.Count != gsmBases.Count);
+
+            }
+
+            statusbar.Text = "Сирота: " + gsmAbons[rand.Next(0, gsmAbons.Count)].Orphan.ToString() + " | " + gsmAbons[rand.Next(0, gsmAbons.Count)].Orphan.ToString() + " | " + gsmAbons[rand.Next(0, gsmAbons.Count)].Orphan.ToString();
+            //  statusbar.Text = gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " /N " + (10 * Math.Log10(Diplom.MyClasses.Point.N)).ToString() + " /IRF " + GSM_Base.GetIRF();
+            MainPanel.Cursor = Cursors.Arrow;
+        }
+        #endregion
+
+        #region заполнение и очистка списков
+        private void FillLists() // Заполнение списков
+        {
+            for (int i = 0; i < numbOfGsmBase; i++)
+            {
+                gsmBases.Add(new GSM_Base(rand.Next(size_X), rand.Next(size_Y)));
+            }
+            for (int i = 0; i < numbOfGsmAbon; i++)
+            {
+                gsmAbons.Add(new GSM_Abon(rand.Next(size_X), rand.Next(size_Y)));
+            }
+            for (int i = 0; i < numbOfCdmaBase; i++)
+            {
+                cdmaBases.Add(new CDMA_Base(rand.Next(size_X), rand.Next(size_Y)));
+            }
+            for (int i = 0; i < numbOfCdmaAbon; i++)
+            {
+                cdmaAbons.Add(new CDMA_Abon(rand.Next(size_X), rand.Next(size_Y)));
+            }
+
+        }
+
+        private void ClearLists() // Очистка списков
+        {
+            gsmBases.Clear();
+            gsmAbons.Clear();
+            cdmaBases.Clear();
+            cdmaAbons.Clear();
+        }
+        #endregion
+
+        #region обработка рисования
+        private void Drawing()
+        { // отрисовка списков станций
+            GSM_base_graph.DataContext = gsmBases;
+            GSM_abon_graph.DataContext = gsmAbons;
+            CDMA_base_graph.DataContext = cdmaBases;
+            CDMA_abon_graph.DataContext = cdmaAbons;
+        }
+
+        private void Cleaning()
+        { // Стирание списков станций
+            GSM_base_graph.DataContext = null;
+            GSM_abon_graph.DataContext = null;
+            CDMA_base_graph.DataContext = null;
+            CDMA_abon_graph.DataContext = null;
+        }
+
+        #endregion
+
+        #region Поля
+
+        Random rand = new Random();
+        public int numbOfGsmBase { get; set; }
+        public int numbOfGsmAbon { get; set; }
+        public int numbOfCdmaBase { get; set; }
+        public int numbOfCdmaAbon { get; set; }
+        List<GSM_Base> gsmBases = new List<GSM_Base>();
+        List<GSM_Abon> gsmAbons = new List<GSM_Abon>();
+        List<CDMA_Base> cdmaBases = new List<CDMA_Base>();
+        List<CDMA_Abon> cdmaAbons = new List<CDMA_Abon>();
+        private int size_Y;
+        private int size_X;
+        #endregion
+
+        #region проверка ввода колличества станций и размеров поля
+        private void numbGsmBase_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                numbOfGsmBase = Int32.Parse(numbGsmBase.Text);
+            }
+            catch (Exception)
+            {
+                numbOfGsmBase = 0;
+                numbGsmBase.Text = "";
+            }
+        }
+
+        private void numbGsmAbon_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                numbOfGsmAbon = Int32.Parse(numbGsmAbon.Text);
+
+            }
+            catch (Exception)
+            {
+                numbOfGsmAbon = 0;
+                numbGsmAbon.Text = "";
+            }
+        }
+
+        private void numbCdmaBase_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                numbOfCdmaBase = Int32.Parse(numbCdmaBase.Text);
+            }
+            catch (Exception)
+            {
+                numbOfCdmaBase = 0;
+                numbCdmaBase.Text = "";
+            }
+        }
+
+        private void numbCdmaAbon_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                numbOfCdmaAbon = Int32.Parse(numbCdmaAbon.Text);
+            }
+            catch (Exception)
+            {
+                numbOfCdmaAbon = 0;
+                numbCdmaAbon.Text = "";
+            }
+
+        }
+
+        private void text_size_X_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                size_X = Int32.Parse(text_size_X.Text);
+            }
+            catch (Exception)
+            {
+                size_X = 0;
+                text_size_X.Text = "";
+                statusbar.Text = "Размер поля должен быть целым числом, больше нуля";
+            }
+        }
+
+        private void text_size_Y_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                size_Y = Int32.Parse(text_size_Y.Text);
+            }
+            catch (Exception)
+            {
+                size_Y = 0;
+                text_size_Y.Text = "";
+                statusbar.Text = "Размер поля должен быть целым числом, больше нуля";
+            }
+        }
+        #endregion
+
+        #region Обработка события захвата фокуса текстбоксами
+        private void text_size_X_GotFocus(object sender, RoutedEventArgs e)
+        {
+            text_size_X.Text = "";
+        }
+
+        private void text_size_Y_GotFocus(object sender, RoutedEventArgs e)
+        {
+            text_size_Y.Text = "";
+        }
+
+        private void numbGsmBase_GotFocus(object sender, RoutedEventArgs e)
+        {
+            numbGsmBase.Text = "";
+        }
+
+        private void numbGsmAbon_GotFocus(object sender, RoutedEventArgs e)
+        {
+            numbGsmAbon.Text = "";
+        }
+
+        private void numbCdmaBase_GotFocus(object sender, RoutedEventArgs e)
+        {
+            numbCdmaBase.Text = "";
+        }
+
+        private void numbCdmaAbon_GotFocus(object sender, RoutedEventArgs e)
+        {
+            numbCdmaAbon.Text = "";
+        }
+        #endregion
+
+        #region метод инициализации стартовых параметров базовых станций и абонентов
+        private void Setup()
+        {
+            #region параметры GSM базовой станции
+            GSM_Base.Ful = 950; // МГц
+            GSM_Base.Fdl = 890; // МГц
+            GSM_Base.P = 40;    // Ват
+            GSM_Base.G = 17;    // дБ
+            GSM_Base.Lf = 3;    // дБ
+            #endregion
+
+            #region параметры GSM абонтской станции
+            GSM_Abon.P = 2;     // Ват
+            GSM_Abon.G = 3;     // дБ
+            GSM_Abon.Lf = 3;    // дБ
+            #endregion
+
+            #region параметры CDMA базовой станции
+            CDMA_Base.Ful = 887; // МГц
+            CDMA_Base.Fdl = 830; // МГц
+            CDMA_Base.P = 40;    // Ват
+            CDMA_Base.G = 17;    // дБ
+            CDMA_Base.Lf = 3;    // дБ
+            #endregion
+
+            #region параметры CDMA абонтской станции
+            CDMA_Abon.P = 2;    // Ват
+            CDMA_Abon.G = 3;    // дБ
+            CDMA_Abon.Lf = 3;   // дБ
+            #endregion
+        }
+        #endregion
+
+
+
+
+
+
+    }
+}
