@@ -90,7 +90,7 @@ namespace Diplom
                 Cleaning();
                 FillLists();
                 Drawing();
-                statusbar.Text = "Станции успешно сгенерированы: GSM Base-" + gsmBases.Count.ToString() + " Abon-" + gsmAbons.Count.ToString() + " CDMA Base-" + cdmaBases.Count.ToString() + " Abon-" + cdmaAbons.Count.ToString();
+                statusbar.Text = "Станции успешно сгенерированы: GSM Base-" + Storage.GsmBases.Count.ToString() + " Abon-" + Storage.GsmAbons.Count.ToString() + " CDMA Base-" + Storage.CdmaBases.Count.ToString() + " Abon-" + Storage.CdmaAbons.Count.ToString();
             }
             else
             {
@@ -107,7 +107,7 @@ namespace Diplom
             MainPanel.Cursor = Cursors.Wait;
             ClearLists();
             Cleaning();
-            statusbar.Text = "Станции успешно удалены: GSM Base-" + gsmBases.Count.ToString() + " Abon-" + gsmAbons.Count.ToString() + " CDMA Base-" + cdmaBases.Count.ToString() + " Abon-" + cdmaAbons.Count.ToString();
+            statusbar.Text = "Станции успешно удалены: GSM Base-" + Storage.GsmBases.Count.ToString() + " Abon-" + Storage.GsmAbons.Count.ToString() + " CDMA Base-" + Storage.CdmaBases.Count.ToString() + " Abon-" + Storage.CdmaAbons.Count.ToString();
             MainPanel.Cursor = Cursors.Arrow;
         }
 
@@ -115,23 +115,23 @@ namespace Diplom
         private void kalkulate_Click(object sender, RoutedEventArgs e)
         {
             MainPanel.Cursor = Cursors.Wait;
-            foreach (GSM_Base gsmBase in gsmBases)
+            foreach (GSM_Base gsmBase in Storage.GsmBases)
             {
-                gsmBase.SetIsum(cdmaBases); // нахождение Isum для каждой GSM базовой станции
+                gsmBase.SetIsum(Storage.CdmaBases); // нахождение Isum для каждой GSM базовой станции
                 //  gsmBase.SetCarier(gsmAbons); // нахождение Carier для каждого абонента GSM и станции записанной для него как родительская.
             }
-            foreach (GSM_Abon abon in gsmAbons)
+            foreach (GSM_Abon abon in Storage.GsmAbons)
             {
                 do
                 {
-                    abon.FindParent(gsmBases); // нахождение ближайшей базовой для GSM абонентов
+                    abon.FindParent(Storage.GsmBases); // нахождение ближайшей базовой для GSM абонентов
                     abon.SetCarier(); // нахождение Carier для каждого абонента
                     abon.TryToConnect();
-                } while (abon.Orphan && abon.BadParent.Count != gsmBases.Count);
+                } while (abon.Orphan && abon.BadParent.Count != Storage.GsmBases.Count);
 
             }
 
-            statusbar.Text = "Сирота: " + gsmAbons[rand.Next(0, gsmAbons.Count)].Orphan.ToString() + " | " + gsmAbons[rand.Next(0, gsmAbons.Count)].Orphan.ToString() + " | " + gsmAbons[rand.Next(0, gsmAbons.Count)].Orphan.ToString();
+            statusbar.Text = "Сирота: " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString() + " | " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString() + " | " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString();
             //  statusbar.Text = gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " /N " + (10 * Math.Log10(Diplom.MyClasses.Point.N)).ToString() + " /IRF " + GSM_Base.GetIRF();
             MainPanel.Cursor = Cursors.Arrow;
         }
@@ -142,39 +142,39 @@ namespace Diplom
         {
             for (int i = 0; i < numbOfGsmBase; i++)
             {
-                gsmBases.Add(new GSM_Base(rand.Next(size_X), rand.Next(size_Y)));
+                Storage.GsmBases.Add(new GSM_Base(rand.Next(size_X), rand.Next(size_Y)));
             }
             for (int i = 0; i < numbOfGsmAbon; i++)
             {
-                gsmAbons.Add(new GSM_Abon(rand.Next(size_X), rand.Next(size_Y)));
+                Storage.GsmAbons.Add(new GSM_Abon(rand.Next(size_X), rand.Next(size_Y)));
             }
             for (int i = 0; i < numbOfCdmaBase; i++)
             {
-                cdmaBases.Add(new CDMA_Base(rand.Next(size_X), rand.Next(size_Y)));
+                Storage.CdmaBases.Add(new CDMA_Base(rand.Next(size_X), rand.Next(size_Y)));
             }
             for (int i = 0; i < numbOfCdmaAbon; i++)
             {
-                cdmaAbons.Add(new CDMA_Abon(rand.Next(size_X), rand.Next(size_Y)));
+                Storage.CdmaAbons.Add(new CDMA_Abon(rand.Next(size_X), rand.Next(size_Y)));
             }
 
         }
 
         private void ClearLists() // Очистка списков
         {
-            gsmBases.Clear();
-            gsmAbons.Clear();
-            cdmaBases.Clear();
-            cdmaAbons.Clear();
+            Storage.GsmBases.Clear();
+            Storage.GsmAbons.Clear();
+            Storage.CdmaBases.Clear();
+            Storage.CdmaAbons.Clear();
         }
         #endregion
 
         #region обработка рисования
         private void Drawing()
         { // отрисовка списков станций
-            GSM_base_graph.DataContext = gsmBases;
-            GSM_abon_graph.DataContext = gsmAbons;
-            CDMA_base_graph.DataContext = cdmaBases;
-            CDMA_abon_graph.DataContext = cdmaAbons;
+            GSM_base_graph.DataContext = Storage.GsmBases;
+            GSM_abon_graph.DataContext = Storage.GsmAbons;
+            CDMA_base_graph.DataContext = Storage.CdmaBases;
+            CDMA_abon_graph.DataContext = Storage.CdmaAbons;
         }
 
         private void Cleaning()
@@ -194,10 +194,6 @@ namespace Diplom
         public int numbOfGsmAbon { get; set; }
         public int numbOfCdmaBase { get; set; }
         public int numbOfCdmaAbon { get; set; }
-        List<GSM_Base> gsmBases = new List<GSM_Base>();
-        List<GSM_Abon> gsmAbons = new List<GSM_Abon>();
-        List<CDMA_Base> cdmaBases = new List<CDMA_Base>();
-        List<CDMA_Abon> cdmaAbons = new List<CDMA_Abon>();
         private int size_Y;
         private int size_X;
         #endregion

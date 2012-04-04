@@ -166,3 +166,5 @@ D:\Diplom\Diplom\Diplom\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\Diplom\Diplom\Diplom\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\Diplom\Diplom\Diplom\obj\x86\Debug\Diplom.exe.manifest
 D:\Diplom\Diplom\Diplom\obj\x86\Debug\Diplom.application
+D:\Diplom\Diplom\Diplom\obj\x86\Debug\MyWindows\Results.baml
+D:\Diplom\Diplom\Diplom\obj\x86\Debug\MyWindows\Results.g.cs

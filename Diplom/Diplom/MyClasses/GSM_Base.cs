@@ -11,17 +11,16 @@ namespace Diplom.MyClasses
         public GSM_Base(int y, int x)
             : base(y, x)
         {
-            Number = Count;
-            Count++;
         }
         public static Double Ful { get; set; } // МГц
         public static Double Fdl { get; set; } // МГц
         public static Double P { get; set; }   // Ват
         public static Double G { get; set; }   // дБ
         public static Double Lf { get; set; }  // дБ
-        public double Isum { get; set; }       // дБ
-        public int Number { get; set; } // порядковый номер при создании
-        public int Count { get; set; } // счетчик колличества созданных базовых
+        public double Isum { get; set; }
+
+// дБ
+
 
         public void SetIsum(List<CDMA_Base> cdma)
         {
