@@ -1,51 +1,54 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:CDMA_Base.cs" caret="526" fromTop="18" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:CDMA_Abon.cs" caret="354" fromTop="14" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:CDMA_Abon_Params.xaml.cs" caret="686" fromTop="24" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:GSM_Abon_Params.xaml.cs" caret="1895" fromTop="20" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:GSM_Base_Params.xaml.cs" caret="2268" fromTop="20" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:CDMA_Base_Params.xaml.cs" caret="2569" fromTop="17" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:CDMA_Abon_Params.xaml" caret="1783" fromTop="6" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:GSM_Abon_Params.xaml" caret="1566" fromTop="10" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:GSM_Base_Params.xaml" caret="2715" fromTop="11" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:CDMA_Base_Params.xaml" caret="2978" fromTop="6" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml" caret="844" fromTop="8" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Point.cs" caret="750" fromTop="22" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1352" fromTop="32" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4109" fromTop="8" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1214" fromTop="29" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml.cs" caret="669" fromTop="23" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:GSM_Base_Params.xaml.cs" caret="384" fromTop="2" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml" caret="32" fromTop="1" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml" caret="536" fromTop="6" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Storage.cs" caret="1523" fromTop="35" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="10020" fromTop="171" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:CDMA_Abon.cs" caret="0" fromTop="0" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:CDMA_Base.cs" caret="0" fromTop="0" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="0" fromTop="0" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="531" fromTop="11" />
   </RecentFiles>
   <RecentEdits>
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:CDMA_Base_Params.xaml" caret="2978" fromTop="6" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="2075" fromTop="34" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="2278" fromTop="35" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="5007" fromTop="25" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="2278" fromTop="29" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1462" fromTop="18" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="775" fromTop="14" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1462" fromTop="25" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1462" fromTop="22" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1462" fromTop="36" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="5007" fromTop="28" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4772" fromTop="29" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="2077" fromTop="28" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="860" fromTop="10" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="305" fromTop="13" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="791" fromTop="18" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="298" fromTop="10" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="2278" fromTop="28" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="881" fromTop="18" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="2073" fromTop="29" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1402" fromTop="29" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Point.cs" caret="441" fromTop="11" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1938" fromTop="29" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="2073" fromTop="25" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="998" fromTop="25" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1288" fromTop="29" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1402" fromTop="25" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1402" fromTop="29" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1550" fromTop="26" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4772" fromTop="23" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4772" fromTop="24" />
-    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4698" fromTop="24" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4876" fromTop="23" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4876" fromTop="24" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="4794" fromTop="24" />
     <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Abon.cs" caret="1328" fromTop="31" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml" caret="52" fromTop="1" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml.cs" caret="872" fromTop="28" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml" caret="536" fromTop="6" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml.cs" caret="1029" fromTop="34" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml.cs" caret="540" fromTop="20" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyWindows/f:Results.xaml.cs" caret="740" fromTop="23" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1402" fromTop="24" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="2926" fromTop="23" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1402" fromTop="13" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="268" fromTop="20" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="268" fromTop="14" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Storage.cs" caret="1191" fromTop="21" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Storage.cs" caret="1077" fromTop="28" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Storage.cs" caret="1534" fromTop="39" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Storage.cs" caret="1512" fromTop="35" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:Storage.cs" caret="1407" fromTop="32" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="6586" fromTop="16" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/f:MainWindow.xaml.cs" caret="7560" fromTop="29" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="1402" fromTop="21" />
+    <File id="F99FD0B9-14AD-4D0D-BE37-8C08C8757AA7/d:MyClasses/f:GSM_Base.cs" caret="580" fromTop="12" />
   </RecentEdits>
 </RecentFiles>

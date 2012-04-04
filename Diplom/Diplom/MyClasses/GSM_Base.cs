@@ -17,9 +17,7 @@ namespace Diplom.MyClasses
         public static Double P { get; set; }   // Ват
         public static Double G { get; set; }   // дБ
         public static Double Lf { get; set; }  // дБ
-        public double Isum { get; set; }
-
-// дБ
+        public double Isum { get; set; }       // дБ
 
 
         public void SetIsum(List<CDMA_Base> cdma)
@@ -37,17 +35,6 @@ namespace Diplom.MyClasses
             }
             this.Isum = sum;
         }
-
-        //  public void SetCarier(List<GSM_Abon> abons)
-        //  {
-        //      foreach (GSM_Abon gsmAbon in abons)
-        //      {
-        //          if (gsmAbon.Parent == this)
-        //          {
-        //              gsmAbon.Carier = ToDB(GSM_Abon.P) + GSM_Abon.G - GSM_Abon.Lf - (92.5 + 20 * Math.Log10(GSM_Base.Fdl / 1000 * Distance((Point)this, (Point)gsmAbon) / 1000)) - GSM_Base.Lf + GSM_Base.G;
-        //          }
-        //      }
-        //  }
 
         public static double GetIRF()
         {
