@@ -180,12 +180,7 @@
   <ItemGroup>
     <Resource Include="Images\BaseST.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DynamicData\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\point.gif" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>

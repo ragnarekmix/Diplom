@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-F:\Diplom\Diplom\obj\x86\Debug\
+D:\Diplom\Diplom\Diplom\obj\x86\Debug\
 Diplom
 none
 false
 DEBUG;TRACE
-F:\Diplom\Diplom\App.xaml
+D:\Diplom\Diplom\Diplom\App.xaml
 6-2080800720
 
 1631728670
-18-613881521
+18624004797
 MainWindow.xaml;MyWindows\About.xaml;MyWindows\CDMA_Abon_Params.xaml;MyWindows\CDMA_Base_Params.xaml;MyWindows\GSM_Abon_Params.xaml;MyWindows\GSM_Base_Params.xaml;
 
 False
