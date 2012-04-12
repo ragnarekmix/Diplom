@@ -22,6 +22,7 @@ namespace Diplom.MyWindows
         private Results()
         {
             InitializeComponent();
+           // ResultPie.DataContext=
         }
 
         private static Results instance;

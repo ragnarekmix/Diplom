@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:charting="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
         mc:Ignorable="d"  x:Class="Diplom.MainWindow"
-        Title="GSM &amp; CDMA" Height="800" Width="1000" Background="{DynamicResource Бекграунд_зеленый}" MinWidth="1000" MinHeight="800" MaxWidth="2000" MaxHeight="2000" WindowStartupLocation="CenterScreen" >
+        Title="GSM &amp; CDMA" Height="800" Width="1000" Background="{DynamicResource Бекграунд_зеленый}" MinWidth="1000" MinHeight="800" WindowStartupLocation="CenterScreen" >
     <Window.Resources>
         <Style x:Key="GSM_Base_Style" TargetType="charting:ScatterDataPoint">
-                     
+
 
             <Setter Property="Background" Value="LightSeaGreen"/>
             <Setter Property="IsTabStop" Value="False"/>
@@ -99,67 +99,67 @@
         </RadialGradientBrush>
     </Window.Resources>
     <DockPanel x:Name="MainPanel" Margin="0">
-		<Menu x:Name="menu" Height="30" FontSize="16" Background="{x:Null}" BorderBrush="{DynamicResource Граница}" BorderThickness="0,0,0,2" VerticalAlignment="Top" DockPanel.Dock="Top">
-			<MenuItem Header="Файл" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}" Margin="10,0,0,0">
-				<Separator/>
-				<MenuItem x:Name="Exit" Click="Exit_Click" Header="Выход" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}"/>
-			</MenuItem>
-			<MenuItem Header="Помощь" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}">
-				<MenuItem x:Name="about" Click="about_Click" Header="О программе" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}" Cursor="Help"/>
-			</MenuItem>
-		</Menu>
-		<DockPanel Margin="10,0,0,0" d:LayoutOverrides="Height" VerticalAlignment="Top">
-			<GroupBox BorderBrush="{DynamicResource Граница}" BorderThickness="2" FontSize="16" FontWeight="Bold" Header="Размеры поля" Height="133" Width="272" DockPanel.Dock="Top">
-				<Canvas>
-					<TextBlock Canvas.Left="8" Canvas.Top="8" FontWeight="Normal" Height="30" TextWrapping="Wrap" Width="100" ><Run Text="По оси X ("/><Run Language="ru-ru" Text="м"/><Run Text="):"/></TextBlock>
-					<TextBlock Canvas.Left="8" Canvas.Top="66" FontWeight="Normal" Height="30" TextWrapping="Wrap" Width="100" ><Run Text="По оси Y"/><Run Language="ru-ru" Text=" (м)"/><Run Text=":"/></TextBlock>
-					<TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="9" FontWeight="Normal" Height="30" x:Name="text_size_X" Text="" TextAlignment="Right" TextChanged="text_size_X_TextChanged" GotFocus="text_size_X_GotFocus" TextWrapping="Wrap" Width="100" />
-					<TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="63" FontWeight="Normal" Height="30" x:Name="text_size_Y" Text="" TextAlignment="Right" TextChanged="text_size_Y_TextChanged" GotFocus="text_size_Y_GotFocus" TextWrapping="Wrap" Width="100" />
-					<Separator Canvas.Left="4" Canvas.Top="37" Height="22.72" Margin="0" Width="243.697" />
-				</Canvas>
-			</GroupBox>
-			<GroupBox Header="Параметры GSM" Height="193.46" Width="272" FontSize="16" BorderBrush="{DynamicResource Граница}" BorderThickness="2" FontWeight="Bold" DockPanel.Dock="Top">
-				<Canvas>
-					<TextBlock TextWrapping="Wrap" Width="100" Height="30" Text="Базовых:" Canvas.Left="8" Canvas.Top="8" FontWeight="Normal"/>
-					<TextBlock TextWrapping="Wrap" Text="Абонентов:" Canvas.Top="95.5" Width="100" Height="30" Canvas.Left="8" FontWeight="Normal"/>
-					<TextBox x:Name="numbGsmBase" TextChanged="numbGsmBase_TextChanged" GotFocus="numbGsmBase_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Width="100" Height="30" Canvas.Top="8" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
-					<TextBox x:Name="numbGsmAbon" TextChanged="numbGsmAbon_TextChanged" GotFocus="numbGsmAbon_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Canvas.Top="95.5" Width="100" Height="30" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
-					<Button x:Name="GSM_base_param" Click="GSM_base_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="38" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
-					<Button x:Name="GSM_abon_param" Click="GSM_abon_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="125.5" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
-					<Separator Height="22.72" Canvas.Left="8" Margin="0" Canvas.Top="72.78" Width="243.697"/>
-				</Canvas>
-			</GroupBox>
-			<GroupBox Header="Параметры CDMA" Height="193.46" Width="272" FontSize="16" BorderBrush="{DynamicResource Граница}" BorderThickness="2" FontWeight="Bold" DockPanel.Dock="Top">
-				<Canvas>
-					<TextBlock TextWrapping="Wrap" Width="100" Height="30" Text="Базовых:" Canvas.Left="8" Canvas.Top="8" FontWeight="Normal"/>
-					<TextBlock TextWrapping="Wrap" Text="Абонентов:" Canvas.Top="95.5" Width="100" Height="30" Canvas.Left="8" FontWeight="Normal"/>
-					<TextBox x:Name="numbCdmaBase" TextChanged="numbCdmaBase_TextChanged" GotFocus="numbCdmaBase_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Width="100" Height="30" Canvas.Top="8" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
-					<TextBox x:Name="numbCdmaAbon" TextChanged="numbCdmaAbon_TextChanged" GotFocus="numbCdmaAbon_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Canvas.Top="95.5" Width="100" Height="30" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
-					<Button x:Name="CDMA_base_param" Click="CDMA_base_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="38" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
-					<Button x:Name="CDMA_abon_param" Click="CDMA_abon_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="125.5" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
-					<Separator Height="22.72" Canvas.Left="8" Margin="0" Canvas.Top="72.78" Width="243.697" FontWeight="Normal"/>
-				</Canvas>
-			</GroupBox>
-			<GroupBox Header="Действия" DockPanel.Dock="Top" BorderThickness="2" FontSize="16" FontWeight="Bold" BorderBrush="{DynamicResource Граница}" Height="166.2" Width="272">
-				<Canvas>
-					<Button x:Name="Generation" Click="Generation_Click" Content="Сгенерировать" Width="120" Height="42.96" FontSize="16" Background="{DynamicResource Кнопка}" Canvas.Left="132" Canvas.Top="20" FontWeight="Normal" Margin="0"/>
-					<Button x:Name="Clear" Click="Clear_Click" Content="Очистить" Width="120" Height="42.96" FontSize="16" Background="{DynamicResource Кнопка}" Canvas.Top="20" FontWeight="Normal" Canvas.Left="8"/>
-					<Button x:Name="kalkulate" Click="kalkulate_Click" Content="Рассчет" Width="130" Height="43" FontSize="16" Background="{DynamicResource Кнопка}" Canvas.Top="78.92" Canvas.Left="65" FontWeight="Normal"/>
-				</Canvas>
-			</GroupBox>
-		</DockPanel>
-		<StackPanel x:Name="StatusPanel" Margin="0" Orientation="Vertical" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
-			<TextBox x:Name="statusbar" TextWrapping="Wrap" Text="Статус бар" Background="{x:Null}" BorderBrush="{DynamicResource Граница}" BorderThickness="0,2,0,0" Height="22" VerticalAlignment="Bottom" Margin="-282,0,0,0"/>
-		</StackPanel>
-		<charting:Chart x:Name="Pole" LegendTitle="Легенда" Cursor="Arrow"  FontSize="10" Margin="10,15,10,10" DockPanel.Dock="Right" >
-			<charting:Chart.Axes>
-				<charting:LinearAxis Orientation="Y" ShowGridLines="True" Foreground="Black"/>
-				<charting:LinearAxis Orientation="X" ShowGridLines="True" Foreground="Black"/>
-			</charting:Chart.Axes>
-			<charting:ScatterSeries x:Name="GSM_base_graph" Title="GSM станция" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource GSM_Base_Style}"/>
-			<charting:ScatterSeries x:Name="GSM_abon_graph" Title="GSM абонент" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource GSM_Abon_Style}"/>
-			<charting:ScatterSeries x:Name="CDMA_base_graph" Title="CDMA станция" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource CDMA_Base_Style}"/>
-			<charting:ScatterSeries x:Name="CDMA_abon_graph" Title="CDMA абонент" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource CDMA_Abon_Style}" Cursor="Cross"/>
-		</charting:Chart>
-	</DockPanel>
+        <Menu x:Name="menu" Height="30" FontSize="16" Background="{x:Null}" BorderBrush="{DynamicResource Граница}" BorderThickness="0,0,0,2" VerticalAlignment="Top" DockPanel.Dock="Top">
+            <MenuItem Header="Файл" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}" Margin="10,0,0,0">
+                <Separator/>
+                <MenuItem x:Name="Exit" Click="Exit_Click" Header="Выход" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}"/>
+            </MenuItem>
+            <MenuItem Header="Помощь" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}">
+                <MenuItem x:Name="about" Click="about_Click" Header="О программе" Background="{DynamicResource Кнопка}" BorderThickness="1" BorderBrush="{DynamicResource Граница}" Cursor="Help"/>
+            </MenuItem>
+        </Menu>
+        <DockPanel Margin="10,0,0,0" d:LayoutOverrides="Height" VerticalAlignment="Top">
+            <GroupBox BorderBrush="{DynamicResource Граница}" BorderThickness="2" FontSize="16" FontWeight="Bold" Header="Размеры поля" Height="133" Width="272" DockPanel.Dock="Top">
+                <Canvas>
+                    <TextBlock Canvas.Left="8" Canvas.Top="8" FontWeight="Normal" Height="30" TextWrapping="Wrap" Width="100" ><Run Text="По оси X ("/><Run Language="ru-ru" Text="м"/><Run Text="):"/></TextBlock>
+                    <TextBlock Canvas.Left="8" Canvas.Top="66" FontWeight="Normal" Height="30" TextWrapping="Wrap" Width="100" ><Run Text="По оси Y"/><Run Language="ru-ru" Text=" (м)"/><Run Text=":"/></TextBlock>
+                    <TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="9" FontWeight="Normal" Height="30" x:Name="text_size_X" Text="" TextAlignment="Right" TextChanged="text_size_X_TextChanged" GotFocus="text_size_X_GotFocus" TextWrapping="Wrap" Width="100" />
+                    <TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="63" FontWeight="Normal" Height="30" x:Name="text_size_Y" Text="" TextAlignment="Right" TextChanged="text_size_Y_TextChanged" GotFocus="text_size_Y_GotFocus" TextWrapping="Wrap" Width="100" />
+                    <Separator Canvas.Left="4" Canvas.Top="37" Height="22.72" Margin="0" Width="243.697" />
+                </Canvas>
+            </GroupBox>
+            <GroupBox Header="Параметры GSM" Height="193.46" Width="272" FontSize="16" BorderBrush="{DynamicResource Граница}" BorderThickness="2" FontWeight="Bold" DockPanel.Dock="Top">
+                <Canvas>
+                    <TextBlock TextWrapping="Wrap" Width="100" Height="30" Text="Базовых:" Canvas.Left="8" Canvas.Top="8" FontWeight="Normal"/>
+                    <TextBlock TextWrapping="Wrap" Text="Абонентов:" Canvas.Top="95.5" Width="100" Height="30" Canvas.Left="8" FontWeight="Normal"/>
+                    <TextBox x:Name="numbGsmBase" TextChanged="numbGsmBase_TextChanged" GotFocus="numbGsmBase_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Width="100" Height="30" Canvas.Top="8" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
+                    <TextBox x:Name="numbGsmAbon" TextChanged="numbGsmAbon_TextChanged" GotFocus="numbGsmAbon_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Canvas.Top="95.5" Width="100" Height="30" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
+                    <Button x:Name="GSM_base_param" Click="GSM_base_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="38" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
+                    <Button x:Name="GSM_abon_param" Click="GSM_abon_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="125.5" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
+                    <Separator Height="22.72" Canvas.Left="8" Margin="0" Canvas.Top="72.78" Width="243.697"/>
+                </Canvas>
+            </GroupBox>
+            <GroupBox Header="Параметры CDMA" Height="193.46" Width="272" FontSize="16" BorderBrush="{DynamicResource Граница}" BorderThickness="2" FontWeight="Bold" DockPanel.Dock="Top">
+                <Canvas>
+                    <TextBlock TextWrapping="Wrap" Width="100" Height="30" Text="Базовых:" Canvas.Left="8" Canvas.Top="8" FontWeight="Normal"/>
+                    <TextBlock TextWrapping="Wrap" Text="Абонентов:" Canvas.Top="95.5" Width="100" Height="30" Canvas.Left="8" FontWeight="Normal"/>
+                    <TextBox x:Name="numbCdmaBase" TextChanged="numbCdmaBase_TextChanged" GotFocus="numbCdmaBase_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Width="100" Height="30" Canvas.Top="8" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
+                    <TextBox x:Name="numbCdmaAbon" TextChanged="numbCdmaAbon_TextChanged" GotFocus="numbCdmaAbon_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="" Canvas.Top="95.5" Width="100" Height="30" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
+                    <Button x:Name="CDMA_base_param" Click="CDMA_base_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="38" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
+                    <Button x:Name="CDMA_abon_param" Click="CDMA_abon_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="125.5" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
+                    <Separator Height="22.72" Canvas.Left="8" Margin="0" Canvas.Top="72.78" Width="243.697" FontWeight="Normal"/>
+                </Canvas>
+            </GroupBox>
+            <GroupBox Header="Действия" DockPanel.Dock="Top" BorderThickness="2" FontSize="16" FontWeight="Bold" BorderBrush="{DynamicResource Граница}" Height="166.2" Width="272">
+                <Canvas>
+                    <Button x:Name="Generation" Click="Generation_Click" Content="Сгенерировать" Width="120" Height="42.96" FontSize="16" Background="{DynamicResource Кнопка}" Canvas.Left="132" Canvas.Top="20" FontWeight="Normal" Margin="0"/>
+                    <Button x:Name="Clear" Click="Clear_Click" Content="Очистить" Width="120" Height="42.96" FontSize="16" Background="{DynamicResource Кнопка}" Canvas.Top="20" FontWeight="Normal" Canvas.Left="8"/>
+                    <Button x:Name="kalkulate" Click="kalkulate_Click" Content="Рассчет" Width="130" Height="43" FontSize="16" Background="{DynamicResource Кнопка}" Canvas.Top="78.92" Canvas.Left="65" FontWeight="Normal"/>
+                </Canvas>
+            </GroupBox>
+        </DockPanel>
+        <StackPanel x:Name="StatusPanel" Margin="0" Orientation="Vertical" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
+            <TextBox x:Name="statusbar" TextWrapping="Wrap" Text="Статус бар" Background="{x:Null}" BorderBrush="{DynamicResource Граница}" BorderThickness="0,2,0,0" Height="22" VerticalAlignment="Bottom" Margin="-282,0,0,0"/>
+        </StackPanel>
+        <charting:Chart x:Name="Pole" LegendTitle="Легенда" Cursor="Cross" FontSize="10" Margin="10,15,10,10" DockPanel.Dock="Right">
+            <charting:Chart.Axes>
+                <charting:LinearAxis Orientation="Y" ShowGridLines="True" Foreground="Black"/>
+                <charting:LinearAxis Orientation="X" ShowGridLines="True" Foreground="Black"/>
+            </charting:Chart.Axes>
+            <charting:ScatterSeries x:Name="GSM_base_graph" Title="GSM станция" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource GSM_Base_Style}"/>
+            <charting:ScatterSeries x:Name="GSM_abon_graph" Title="GSM абонент" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource GSM_Abon_Style}"/>
+            <charting:ScatterSeries x:Name="CDMA_base_graph" Title="CDMA станция" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource CDMA_Base_Style}"/>
+            <charting:ScatterSeries x:Name="CDMA_abon_graph" Title="CDMA абонент" DependentValuePath="X" IndependentValuePath="Y" ItemsSource="{Binding}" DataPointStyle="{StaticResource CDMA_Abon_Style}"/>
+        </charting:Chart>
+    </DockPanel>
 </Window>

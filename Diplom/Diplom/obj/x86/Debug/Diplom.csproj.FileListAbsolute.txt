@@ -168,3 +168,8 @@ D:\Diplom\Diplom\Diplom\obj\x86\Debug\Diplom.exe.manifest
 D:\Diplom\Diplom\Diplom\obj\x86\Debug\Diplom.application
 D:\Diplom\Diplom\Diplom\obj\x86\Debug\MyWindows\Results.baml
 D:\Diplom\Diplom\Diplom\obj\x86\Debug\MyWindows\Results.g.cs
+D:\Diplom\Diplom\Diplom\bin\Debug\Microsoft.Expression.Drawing.dll
+D:\Diplom\Diplom\Diplom\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+D:\Diplom\Diplom\Diplom\bin\Debug\WPFToolkit.dll
+D:\Diplom\Diplom\Diplom\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.pdb
+D:\Diplom\Diplom\Diplom\bin\Debug\WPFToolkit.pdb

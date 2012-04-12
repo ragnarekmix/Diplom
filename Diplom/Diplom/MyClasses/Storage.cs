@@ -38,5 +38,12 @@ namespace Diplom.MyClasses
             get { return _cdmaAbonsStorage; }
             set { _cdmaAbonsStorage = value; }
         }
+
+        private static List<Connected> _connecteds = new List<Connected>(); // Статическая переменная для хранения результатов подключения абонентов GSM
+        public static List<Connected> Connecteds // Поле для доступа к результатам подключения абонентов GSM
+        {
+            get { return _connecteds; }
+            set { _connecteds = value; }
+        }
     }
 }
