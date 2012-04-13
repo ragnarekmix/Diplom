@@ -8,11 +8,29 @@
         Title="Результаты рассчетов" Height="747" Width="900" Background="{DynamicResource Бекграунд_зеленый}" MinWidth="500" MinHeight="400" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
     <StackPanel>
         <charting:Chart x:Name="ChartResult" LegendTitle="Легенда" FontSize="10" Height="350" Margin="10">
-            <charting:PieSeries x:Name="Connected1" Title="Подключились сразу" />
-            <charting:PieSeries x:Name="Connected2" Title="Подключились не сразу"/>
-            <charting:PieSeries x:Name="Orphan" Title="Не смогли подключиться"/>            
+            <charting:PieSeries x:Name="ResultPie"  DependentValuePath="Value" IndependentValuePath="Label" ItemsSource="{Binding}" Foreground="{x:Null}"/>
         </charting:Chart>
-        <DataGrid x:Name="GridResultAbons" Height="150" Margin="10"></DataGrid>
-        <DataGrid x:Name="GridResultBases" Height="150" Margin="10"/>
+        <DataGrid x:Name="GridResultBases" Height="150" Margin="10" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=number}" Header="№" MinWidth="30" FontSize="13.333" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=isum}" Header="I суммарное" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=ful}" Header="Частота UL" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=fdl}" Header="Частота DL" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=power}" Header="Мощность" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=g}" Header="Коэф. усиления" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=lf}" Header="Ослабление фидера" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="GridResultAbons" Height="150" Margin="10" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=number}" Header="№" MinWidth="30" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=connected}" Header="Подключен" MinWidth="134" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=carier}" Header="Carier" MinWidth="134" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=parent}" Header="Родительская станция" MinWidth="134" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=power}" Header="Мощность" MinWidth="134" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=g}" Header="Коэф. усиления" MinWidth="134" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Path=lf}" Header="Ослабление фидера" MinWidth="134" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </StackPanel>
 </Window>

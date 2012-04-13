@@ -137,8 +137,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyClasses\BaseResults.cs" />
     <Compile Include="MyClasses\CDMA_Abon.cs" />
     <Compile Include="MyClasses\CDMA_Base.cs" />
+    <Compile Include="MyClasses\AbonsResult.cs" />
     <Compile Include="MyClasses\Connected.cs" />
     <Compile Include="MyClasses\GSM_Abon.cs" />
     <Compile Include="MyClasses\GSM_Base.cs" />

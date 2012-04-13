@@ -45,5 +45,19 @@ namespace Diplom.MyClasses
             get { return _connecteds; }
             set { _connecteds = value; }
         }
+
+        private static List<AbonsResult> _abonsResults = new List<AbonsResult>();
+        public static List<AbonsResult> AbonsResults
+        {
+            get { return _abonsResults; }
+            set { _abonsResults = value; }
+        }
+
+        private static List<BaseResults> _baseResults = new List<BaseResults>();
+        public static List<BaseResults> BaseResults
+        {
+            get { return _baseResults; }
+            set { _baseResults = value; }
+        }
     }
 }

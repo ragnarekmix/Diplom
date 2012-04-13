@@ -132,24 +132,27 @@ namespace Diplom
             }
             // statusbar.Text = "Сирота: " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString() + " | " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString() + " | " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString();
             //  statusbar.Text = gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " /N " + (10 * Math.Log10(Diplom.MyClasses.Point.N)).ToString() + " /IRF " + GSM_Base.GetIRF();
+            int connectFirstTime = new int();
+            int connectSecondTime = new int();
+            int orphan = new int();
             foreach (GSM_Abon abon in Storage.GsmAbons)
             {
-                int connectFirstTime = new int();
-                int connectSecondTime = new int();
-                int orphan = new int();
                 if (abon.Orphan)
                 {
                     orphan++;
                 }
-                if (abon.Orphan == false && abon.BadParent.Count == 0)
+                if (!abon.Orphan && abon.BadParent.Count == 0)
                 {
                     connectFirstTime++;
                 }
-                if (abon.Orphan == false && abon.BadParent.Count > 0)
+                if (!abon.Orphan && abon.BadParent.Count > 0)
                 {
                     connectSecondTime++;
                 }
             }
+            Storage.Connecteds.Add(new Connected("Подключились сразу", connectFirstTime));
+            Storage.Connecteds.Add(new Connected("Подключились не сразу", connectSecondTime));
+            Storage.Connecteds.Add(new Connected("Не подключились", orphan));
             MainPanel.Cursor = Cursors.Arrow;
             Results Result = Results.GetResults();
             Result.Show();
@@ -185,6 +188,9 @@ namespace Diplom
             Storage.GsmAbons.Clear();
             Storage.CdmaBases.Clear();
             Storage.CdmaAbons.Clear();
+            Storage.Connecteds.Clear();
+            Storage.AbonsResults.Clear();
+            Storage.BaseResults.Clear();
         }
         #endregion
 
