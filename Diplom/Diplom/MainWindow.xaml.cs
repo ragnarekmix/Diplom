@@ -85,13 +85,14 @@ namespace Diplom
         private void Generation_Click(object sender, RoutedEventArgs e)
         {
             MainPanel.Cursor = Cursors.Wait;
-            if (numbOfGsmBase >= 0 & numbOfGsmAbon >= 0 & numbOfCdmaBase >= 0 & numbOfCdmaAbon >= 0)
+            if (numbOfGsmBase > 0 & numbOfGsmAbon >= 0 & numbOfCdmaBase >= 0 & numbOfCdmaAbon >= 0)
             {
                 ClearLists();
                 Cleaning();
                 FillLists();
                 Drawing();
                 statusbar.Text = "Станции успешно сгенерированы: GSM Base-" + Storage.GsmBases.Count.ToString() + " Abon-" + Storage.GsmAbons.Count.ToString() + " CDMA Base-" + Storage.CdmaBases.Count.ToString() + " Abon-" + Storage.CdmaAbons.Count.ToString();
+                kalkulate.Visibility = System.Windows.Visibility.Visible;
             }
             else
             {
@@ -100,7 +101,7 @@ namespace Diplom
                 statusbar.Text = "Введите верное колличество станций";
             }
             MainPanel.Cursor = Cursors.Arrow;
-            kalkulate.Visibility = System.Windows.Visibility.Visible;
+            
         }
 
         // Обработка события нажатия на кнопку Очистить

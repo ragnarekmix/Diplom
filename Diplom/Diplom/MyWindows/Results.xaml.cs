@@ -168,36 +168,36 @@ namespace Diplom.MyWindows
         private void ShowIsum()
         {
             this.Cursor = Cursors.Wait;
-            if ((bool) LinearGraph.IsChecked)
+            if ((bool)LinearGraph.IsChecked)
             {
                 DataResult.Series.Clear();
                 var Graph = new LineSeries
                 {
-                    ItemsSource = Storage.BaseResults,
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
                     DependentValuePath = "isum",
                     IndependentValuePath = "number",
                     Title = "I сумма"
                 };
                 DataResult.Series.Add(Graph);
             }
-            if ((bool) AreaGraph.IsChecked)
+            if ((bool)AreaGraph.IsChecked)
             {
                 DataResult.Series.Clear();
                 var Graph = new AreaSeries
                 {
-                    ItemsSource = Storage.BaseResults,
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
                     DependentValuePath = "isum",
                     IndependentValuePath = "number",
                     Title = "I сумма"
                 };
                 DataResult.Series.Add(Graph);
             }
-            if ((bool) ColumnGraph.IsChecked)
+            if ((bool)ColumnGraph.IsChecked)
             {
                 DataResult.Series.Clear();
                 var Graph = new ColumnSeries
                 {
-                    ItemsSource = Storage.BaseResults,
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
                     DependentValuePath = "isum",
                     IndependentValuePath = "number",
                     Title = "I сумма"
@@ -214,7 +214,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new LineSeries
                 {
-                    ItemsSource = Storage.BaseResults,
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
                     DependentValuePath = "childs",
                     IndependentValuePath = "number",
                     Title = "Абонентов на базовой"
@@ -226,7 +226,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new AreaSeries
                 {
-                    ItemsSource = Storage.BaseResults,
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
                     DependentValuePath = "childs",
                     IndependentValuePath = "number",
                     Title = "Абонентов на базовой"
@@ -238,7 +238,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new ColumnSeries
                 {
-                    ItemsSource = Storage.BaseResults,
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults,100),
                     DependentValuePath = "childs",
                     IndependentValuePath = "number",
                     Title = "Абонентов на базовой"
@@ -255,7 +255,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new LineSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "carier",
                     IndependentValuePath = "number",
                     Title = "Carier"
@@ -267,7 +267,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new AreaSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "carier",
                     IndependentValuePath = "number",
                     Title = "Carier"
@@ -279,7 +279,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new ColumnSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "carier",
                     IndependentValuePath = "number",
                     Title = "Carier"
@@ -296,7 +296,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new LineSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "cin",
                     IndependentValuePath = "number",
                     Title = "C/(I+N)"
@@ -308,7 +308,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new AreaSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "cin",
                     IndependentValuePath = "number",
                     Title = "C/(I+N)"
@@ -320,7 +320,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new ColumnSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "cin",
                     IndependentValuePath = "number",
                     Title = "C/(I+N)"
@@ -337,7 +337,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new LineSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "bedparents",
                     IndependentValuePath = "number",
                     Title = "Попыток подключиться"
@@ -349,7 +349,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new AreaSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "bedparents",
                     IndependentValuePath = "number",
                     Title = "Попыток подключиться"
@@ -361,7 +361,7 @@ namespace Diplom.MyWindows
                 DataResult.Series.Clear();
                 var Graph = new ColumnSeries
                 {
-                    ItemsSource = Storage.AbonsResults,
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
                     DependentValuePath = "bedparents",
                     IndependentValuePath = "number",
                     Title = "Попыток подключиться"
@@ -396,6 +396,40 @@ namespace Diplom.MyWindows
         private void ShowBadParentsButton_Click(object sender, RoutedEventArgs e)
         {
             ShowBadParents();
+        }
+        #endregion
+        #region Проверка длинны списка и возвращение не более 500 первых
+        private static List<AbonsResult> GetFirstOfAbons(List<AbonsResult> abons, int count)
+        {
+            if (abons.Count > count)
+            {
+                var newabons = new List<AbonsResult>();
+                for (int i = 0; i < count; i++)
+                {
+                    newabons.Add(abons[i]);
+                }
+                return newabons;
+            }
+            else
+            {
+                return abons;
+            }
+        }
+        private static List<BaseResults> GetFirstOfBases(List<BaseResults> bases, int count)
+        {
+            if (bases.Count > count)
+            {
+                var newbases = new List<BaseResults>();
+                for (int i = 0; i < count; i++)
+                {
+                    newbases.Add(bases[i]);
+                }
+                return newbases;
+            }
+            else
+            {
+                return bases;
+            }
         }
         #endregion
     }

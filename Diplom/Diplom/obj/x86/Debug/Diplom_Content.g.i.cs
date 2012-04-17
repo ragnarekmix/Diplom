@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/linear.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("drive%20firewire.ico")]
 
 
