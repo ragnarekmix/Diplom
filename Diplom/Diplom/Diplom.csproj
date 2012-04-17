@@ -191,7 +191,11 @@
   <ItemGroup>
     <Resource Include="Images\BaseST.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Area.jpg" />
+    <Resource Include="Images\Column.jpg" />
+    <Resource Include="Images\Linear.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
       <Visible>False</Visible>

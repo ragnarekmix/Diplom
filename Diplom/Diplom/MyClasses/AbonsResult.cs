@@ -9,23 +9,15 @@ namespace Diplom.MyClasses
     {
         public AbonsResult()
         { }
-
-        public AbonsResult(string number, string connected, string carier, string parent, string power, string g, string lf)
-        {
-            this.number = number;
-            this.connected = connected;
-            this.carier = carier;
-            this.power = power;
-            this.parent = parent;
-            this.g = g;
-            this.lf = lf;
-        }
-        public string number;
-        public string power;
-        public string connected;
-        public string g;
-        public string lf;
-        public string carier;
-        public string parent;
+                
+        public int number { get; set; }
+        public double power { get; set; }
+        public String connected { get; set; }
+        public double g { get; set; }
+        public double lf { get; set; }
+        public double carier { get; set; }
+        public double cin { get; set; }
+        public int parent { get; set; }
+        public int bedparents { get; set; }
     }
 }

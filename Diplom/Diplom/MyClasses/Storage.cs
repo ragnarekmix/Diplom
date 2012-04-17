@@ -46,14 +46,14 @@ namespace Diplom.MyClasses
             set { _connecteds = value; }
         }
 
-        private static List<AbonsResult> _abonsResults = new List<AbonsResult>();
+        private static List<AbonsResult> _abonsResults = new List<AbonsResult>(); // Результаты по абонентам
         public static List<AbonsResult> AbonsResults
         {
             get { return _abonsResults; }
             set { _abonsResults = value; }
         }
 
-        private static List<BaseResults> _baseResults = new List<BaseResults>();
+        private static List<BaseResults> _baseResults = new List<BaseResults>(); // Результаты по базовым
         public static List<BaseResults> BaseResults
         {
             get { return _baseResults; }

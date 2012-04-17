@@ -30,6 +30,7 @@ namespace Diplom
         {
             InitializeComponent();
             Setup();
+            kalkulate.Visibility = System.Windows.Visibility.Hidden;
         }
 
         #region Обработка кнопок главного окна
@@ -99,6 +100,7 @@ namespace Diplom
                 statusbar.Text = "Введите верное колличество станций";
             }
             MainPanel.Cursor = Cursors.Arrow;
+            kalkulate.Visibility = System.Windows.Visibility.Visible;
         }
 
         // Обработка события нажатия на кнопку Очистить
@@ -108,6 +110,7 @@ namespace Diplom
             ClearLists();
             Cleaning();
             statusbar.Text = "Станции успешно удалены: GSM Base-" + Storage.GsmBases.Count.ToString() + " Abon-" + Storage.GsmAbons.Count.ToString() + " CDMA Base-" + Storage.CdmaBases.Count.ToString() + " Abon-" + Storage.CdmaAbons.Count.ToString();
+            kalkulate.Visibility = System.Windows.Visibility.Hidden;
             MainPanel.Cursor = Cursors.Arrow;
         }
 
@@ -115,11 +118,24 @@ namespace Diplom
         private void kalkulate_Click(object sender, RoutedEventArgs e)
         {
             MainPanel.Cursor = Cursors.Wait;
-            foreach (GSM_Base gsmBase in Storage.GsmBases)
+            #region нахождение Isum
+            if (Storage.CdmaBases.Count > 0)
             {
-                gsmBase.SetIsum(Storage.CdmaBases); // нахождение Isum для каждой GSM базовой станции
-                //  gsmBase.SetCarier(gsmAbons); // нахождение Carier для каждого абонента GSM и станции записанной для него как родительская.
+                foreach (GSM_Base gsmBase in Storage.GsmBases)
+                {
+                    gsmBase.SetIsum(Storage.CdmaBases); // нахождение Isum для каждой GSM базовой станции
+                    //  gsmBase.SetCarier(gsmAbons); // нахождение Carier для каждого абонента GSM и станции записанной для него как родительская.
+                }
             }
+            else
+            {
+                foreach (GSM_Base gsmBase in Storage.GsmBases)
+                {
+                    gsmBase.Isum = 0; // Если CDMA станций нет, то Isum = 0
+                }
+            }
+            #endregion
+            #region нахождение родителя, установка carier, попытка подключиться
             foreach (GSM_Abon abon in Storage.GsmAbons)
             {
                 do
@@ -130,8 +146,8 @@ namespace Diplom
                 } while (abon.Orphan && abon.BadParent.Count != Storage.GsmBases.Count);
 
             }
-            // statusbar.Text = "Сирота: " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString() + " | " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString() + " | " + Storage.GsmAbons[rand.Next(0, Storage.GsmAbons.Count)].Orphan.ToString();
-            //  statusbar.Text = gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " / " + gsmBases[rand.Next(0, gsmBases.Count)].Isum.ToString() + " /N " + (10 * Math.Log10(Diplom.MyClasses.Point.N)).ToString() + " /IRF " + GSM_Base.GetIRF();
+            #endregion
+            #region подсчет подключенных абонентов и не подключенных
             int connectFirstTime = new int();
             int connectSecondTime = new int();
             int orphan = new int();
@@ -153,10 +169,13 @@ namespace Diplom
             Storage.Connecteds.Add(new Connected("Подключились сразу", connectFirstTime));
             Storage.Connecteds.Add(new Connected("Подключились не сразу", connectSecondTime));
             Storage.Connecteds.Add(new Connected("Не подключились", orphan));
+            #endregion
             MainPanel.Cursor = Cursors.Arrow;
+            #region вывод окна с результатами
             Results Result = Results.GetResults();
             Result.Show();
             Result.Activate();
+            #endregion
         }
         #endregion
 
@@ -191,6 +210,8 @@ namespace Diplom
             Storage.Connecteds.Clear();
             Storage.AbonsResults.Clear();
             Storage.BaseResults.Clear();
+            GSM_Abon.Count = 0;
+            GSM_Base.Count = 0;
         }
         #endregion
 
@@ -229,6 +250,12 @@ namespace Diplom
         {
             try
             {
+                kalkulate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            catch (Exception) { }
+
+            try
+            {
                 numbOfGsmBase = Int32.Parse(numbGsmBase.Text);
             }
             catch (Exception)
@@ -240,6 +267,11 @@ namespace Diplom
 
         private void numbGsmAbon_TextChanged(object sender, TextChangedEventArgs e)
         {
+            try
+            {
+                kalkulate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            catch (Exception) { }
             try
             {
                 numbOfGsmAbon = Int32.Parse(numbGsmAbon.Text);
@@ -256,6 +288,11 @@ namespace Diplom
         {
             try
             {
+                kalkulate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            catch (Exception) { }
+            try
+            {
                 numbOfCdmaBase = Int32.Parse(numbCdmaBase.Text);
             }
             catch (Exception)
@@ -267,6 +304,11 @@ namespace Diplom
 
         private void numbCdmaAbon_TextChanged(object sender, TextChangedEventArgs e)
         {
+            try
+            {
+                kalkulate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            catch (Exception) { }
             try
             {
                 numbOfCdmaAbon = Int32.Parse(numbCdmaAbon.Text);
@@ -283,6 +325,11 @@ namespace Diplom
         {
             try
             {
+                kalkulate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            catch (Exception) { }
+            try
+            {
                 size_X = Int32.Parse(text_size_X.Text);
             }
             catch (Exception)
@@ -295,6 +342,11 @@ namespace Diplom
 
         private void text_size_Y_TextChanged(object sender, TextChangedEventArgs e)
         {
+            try
+            {
+                kalkulate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            catch (Exception) { }
             try
             {
                 size_Y = Int32.Parse(text_size_Y.Text);

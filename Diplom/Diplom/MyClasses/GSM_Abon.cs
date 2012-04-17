@@ -12,18 +12,19 @@ namespace Diplom.MyClasses
         {
             Orphan = true;
             BadParent = new List<GSM_Base>();
-            Number = Count;
             Count++;
+            Number = Count;
         }
         public static Double P { get; set; }  // Ват
         public static Double G { get; set; }  // дБ
         public static Double Lf { get; set; } // дБ
         public Boolean Orphan { get; set; }
         public double Carier { get; set; }    // дБ
+        public double CIN { get; set; } // S/(I+N)
         public GSM_Base Parent { get; set; } // Родительская станция
         public List<GSM_Base> BadParent { get; set; } // Родительская станция, на которой абонент был задавлен помехами от CDMA
         public int Number { get; set; } // Порядковый номер станции
-        private static int Count { get; set; } // Счетчик созданных станций
+        public static int Count { get; set; } // Счетчик созданных станций
 
 
         public void FindParent(List<GSM_Base> bases)
@@ -58,8 +59,8 @@ namespace Diplom.MyClasses
             double C = this.Carier;
             double Isum = this.Parent.Isum;
             double N = ToDB(Point.N) + 30;
-            double SIN = C - Isum - N;
-            if (SIN <= 9)
+            this.CIN = C - Isum - N;
+            if (this.CIN <= 9)
             {
                 this.Orphan = false; // Подключение
             }

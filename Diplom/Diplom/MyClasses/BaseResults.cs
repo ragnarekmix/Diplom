@@ -9,22 +9,14 @@ namespace Diplom.MyClasses
     {
         public BaseResults()
         { }
-        public BaseResults(string number, string isum, string ful, string fdl, string power, string g, string lf)
-        {
-            this.number = number;
-            this.isum = isum;
-            this.ful = ful;
-            this.fdl = fdl;
-            this.power = power;
-            this.g = g;
-            this.lf = lf;
-        }
-        public string number;
-        public string isum;
-        public string ful;
-        public string fdl;
-        public string power;
-        public string g;
-        public string lf;
+
+        public int number { get; set; }
+        public double isum { get; set; }
+        public double ful { get; set; }
+        public double fdl { get; set; }
+        public double power { get; set; }
+        public double g { get; set; }
+        public double lf { get; set; }
+        public int childs { get; set; }
     }
 }
