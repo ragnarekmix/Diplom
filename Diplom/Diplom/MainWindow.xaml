@@ -113,8 +113,8 @@
                 <Canvas>
                     <TextBlock Canvas.Left="8" Canvas.Top="8" FontWeight="Normal" Height="30" TextWrapping="Wrap" Width="100" ><Run Text="По оси X ("/><Run Language="ru-ru" Text="м"/><Run Text="):"/></TextBlock>
                     <TextBlock Canvas.Left="8" Canvas.Top="66" FontWeight="Normal" Height="30" TextWrapping="Wrap" Width="100" ><Run Text="По оси Y"/><Run Language="ru-ru" Text=" (м)"/><Run Text=":"/></TextBlock>
-                    <TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="9" FontWeight="Normal" Height="30" x:Name="text_size_X" Text="1000" TextAlignment="Right" TextChanged="text_size_X_TextChanged" GotFocus="text_size_X_GotFocus" TextWrapping="Wrap" Width="100" />
-                    <TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="63" FontWeight="Normal" Height="30" x:Name="text_size_Y" Text="1000" TextAlignment="Right" TextChanged="text_size_Y_TextChanged" GotFocus="text_size_Y_GotFocus" TextWrapping="Wrap" Width="100" />
+                    <TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="9" FontWeight="Normal" Height="30" x:Name="text_size_X" Text="5000" TextAlignment="Right" TextChanged="text_size_X_TextChanged" GotFocus="text_size_X_GotFocus" TextWrapping="Wrap" Width="100" />
+                    <TextBox Background="{DynamicResource Поле заполнения}" BorderBrush="{DynamicResource Граница}" Canvas.Left="148" Canvas.Top="63" FontWeight="Normal" Height="30" x:Name="text_size_Y" Text="5000" TextAlignment="Right" TextChanged="text_size_Y_TextChanged" GotFocus="text_size_Y_GotFocus" TextWrapping="Wrap" Width="100" />
                     <Separator Canvas.Left="4" Canvas.Top="37" Height="22.72" Margin="0" Width="243.697" />
                 </Canvas>
             </GroupBox>
@@ -123,7 +123,7 @@
                     <TextBlock TextWrapping="Wrap" Width="100" Height="30" Text="Базовых:" Canvas.Left="8" Canvas.Top="8" FontWeight="Normal"/>
                     <TextBlock TextWrapping="Wrap" Text="Абонентов:" Canvas.Top="95.5" Width="100" Height="30" Canvas.Left="8" FontWeight="Normal"/>
                     <TextBox x:Name="numbGsmBase" TextChanged="numbGsmBase_TextChanged" GotFocus="numbGsmBase_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="10" Width="100" Height="30" Canvas.Top="8" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
-                    <TextBox x:Name="numbGsmAbon" TextChanged="numbGsmAbon_TextChanged" GotFocus="numbGsmAbon_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="10" Canvas.Top="95.5" Width="100" Height="30" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
+                    <TextBox x:Name="numbGsmAbon" TextChanged="numbGsmAbon_TextChanged" GotFocus="numbGsmAbon_GotFocus" Canvas.Left="151.697" TextWrapping="Wrap" Text="100" Canvas.Top="95.5" Width="100" Height="30" FontWeight="Normal" BorderBrush="{DynamicResource Граница}" Background="{DynamicResource Поле заполнения}" TextAlignment="Right"/>
                     <Button x:Name="GSM_base_param" Click="GSM_base_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="38" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
                     <Button x:Name="GSM_abon_param" Click="GSM_abon_param_Click" Content="Параметры" Canvas.Left="8" Canvas.Top="125.5" Width="100" FontWeight="Normal" Background="{DynamicResource Кнопка}"/>
                     <Separator Height="22.72" Canvas.Left="8" Margin="0" Canvas.Top="72.78" Width="243.697"/>
@@ -151,7 +151,7 @@
         <StackPanel x:Name="StatusPanel" Margin="0" Orientation="Vertical" VerticalAlignment="Bottom" DockPanel.Dock="Bottom">
             <TextBox x:Name="statusbar" TextWrapping="Wrap" Text="Статус бар" Background="{x:Null}" BorderBrush="{DynamicResource Граница}" BorderThickness="0,2,0,0" Height="22" VerticalAlignment="Bottom" Margin="-282,0,0,0"/>
         </StackPanel>
-        <charting:Chart x:Name="Pole" LegendTitle="Легенда" Cursor="Cross" FontSize="10" Margin="10,15,10,10" DockPanel.Dock="Right">
+        <charting:Chart x:Name="Pole" LegendTitle="Легенда" Cursor="Cross" FontSize="12" Margin="10,15,10,10" DockPanel.Dock="Right">
             <charting:Chart.Axes>
                 <charting:LinearAxis Orientation="Y" ShowGridLines="True" Foreground="Black"/>
                 <charting:LinearAxis Orientation="X" ShowGridLines="True" Foreground="Black"/>

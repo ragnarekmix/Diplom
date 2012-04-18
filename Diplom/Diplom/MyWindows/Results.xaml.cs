@@ -31,7 +31,6 @@ namespace Diplom.MyWindows
             GetResultsForBases(Storage.GsmBases);
             GridResultAbons.ItemsSource = Storage.AbonsResults;
             GridResultBases.ItemsSource = Storage.BaseResults;
-            ShowIsum();
         }
 
         private static Results _instance;
@@ -72,12 +71,12 @@ namespace Diplom.MyWindows
                     abonResult.connected = "Подключен";
                     abonResult.parent = abon.Parent.Number;
                 }
-                abonResult.carier = abon.Carier;
+                abonResult.carier = Math.Round(abon.Carier, 10);
                 abonResult.power = GSM_Abon.P;
                 abonResult.g = GSM_Abon.G;
                 abonResult.lf = GSM_Abon.Lf;
                 abonResult.bedparents = abon.BadParent.Count;
-                abonResult.cin = abon.CIN;
+                abonResult.cin = Math.Round(abon.CIN, 10);
                 Storage.AbonsResults.Add(abonResult);
             }
         }
@@ -88,7 +87,7 @@ namespace Diplom.MyWindows
             {
                 BaseResults baseResult = new BaseResults();
                 baseResult.number = gsm.Number;
-                baseResult.isum = gsm.Isum;
+                baseResult.isum = Math.Round(gsm.Isum, 10);
                 baseResult.ful = GSM_Base.Ful;
                 baseResult.fdl = GSM_Base.Fdl;
                 baseResult.power = GSM_Base.P;
@@ -171,38 +170,36 @@ namespace Diplom.MyWindows
             if ((bool)LinearGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new LineSeries
-                {
-                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
-                    DependentValuePath = "isum",
-                    IndependentValuePath = "number",
-                    Title = "I сумма"
-                };
-                DataResult.Series.Add(Graph);
+                var graph = new LineSeries();
+                graph.ItemsSource = GetFirstOfBases(Storage.BaseResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString()));
+                graph.DependentValuePath = "isum";
+                graph.IndependentValuePath = "number";
+                graph.Title = "I суммарное";
+                DataResult.Series.Add(graph);
             }
             if ((bool)AreaGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new AreaSeries
+                var graph = new AreaSeries
                 {
-                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "isum",
                     IndependentValuePath = "number",
-                    Title = "I сумма"
+                    Title = "I суммарное"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)ColumnGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new ColumnSeries
+                var graph = new ColumnSeries
                 {
-                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "isum",
                     IndependentValuePath = "number",
-                    Title = "I сумма"
+                    Title = "I суммарное"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             this.Cursor = Cursors.Arrow;
         }
@@ -212,38 +209,38 @@ namespace Diplom.MyWindows
             if ((bool)LinearGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new LineSeries
+                var graph = new LineSeries
                 {
-                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "childs",
                     IndependentValuePath = "number",
                     Title = "Абонентов на базовой"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)AreaGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new AreaSeries
+                var graph = new AreaSeries
                 {
-                    ItemsSource = GetFirstOfBases(Storage.BaseResults, 100),
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "childs",
                     IndependentValuePath = "number",
                     Title = "Абонентов на базовой"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)ColumnGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new ColumnSeries
+                var graph = new ColumnSeries
                 {
-                    ItemsSource = GetFirstOfBases(Storage.BaseResults,100),
+                    ItemsSource = GetFirstOfBases(Storage.BaseResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "childs",
                     IndependentValuePath = "number",
                     Title = "Абонентов на базовой"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             this.Cursor = Cursors.Arrow;
         }
@@ -253,38 +250,38 @@ namespace Diplom.MyWindows
             if ((bool)LinearGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new LineSeries
+                var graph = new LineSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "carier",
                     IndependentValuePath = "number",
                     Title = "Carier"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)AreaGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new AreaSeries
+                var graph = new AreaSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "carier",
                     IndependentValuePath = "number",
                     Title = "Carier"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)ColumnGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new ColumnSeries
+                var graph = new ColumnSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "carier",
                     IndependentValuePath = "number",
                     Title = "Carier"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             this.Cursor = Cursors.Arrow;
         }
@@ -294,38 +291,38 @@ namespace Diplom.MyWindows
             if ((bool)LinearGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new LineSeries
+                var graph = new LineSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "cin",
                     IndependentValuePath = "number",
                     Title = "C/(I+N)"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)AreaGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new AreaSeries
+                var graph = new AreaSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "cin",
                     IndependentValuePath = "number",
                     Title = "C/(I+N)"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)ColumnGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new ColumnSeries
+                var graph = new ColumnSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "cin",
                     IndependentValuePath = "number",
                     Title = "C/(I+N)"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             this.Cursor = Cursors.Arrow;
         }
@@ -335,38 +332,38 @@ namespace Diplom.MyWindows
             if ((bool)LinearGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new LineSeries
+                var graph = new LineSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "bedparents",
                     IndependentValuePath = "number",
                     Title = "Попыток подключиться"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)AreaGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new AreaSeries
+                var graph = new AreaSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "bedparents",
                     IndependentValuePath = "number",
                     Title = "Попыток подключиться"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             if ((bool)ColumnGraph.IsChecked)
             {
                 DataResult.Series.Clear();
-                var Graph = new ColumnSeries
+                var graph = new ColumnSeries
                 {
-                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, 100),
+                    ItemsSource = GetFirstOfAbons(Storage.AbonsResults, Int32.Parse(numberOfPoints.SelectionBoxItem.ToString())),
                     DependentValuePath = "bedparents",
                     IndependentValuePath = "number",
                     Title = "Попыток подключиться"
                 };
-                DataResult.Series.Add(Graph);
+                DataResult.Series.Add(graph);
             }
             this.Cursor = Cursors.Arrow;
         }
@@ -398,7 +395,8 @@ namespace Diplom.MyWindows
             ShowBadParents();
         }
         #endregion
-        #region Проверка длинны списка и возвращение не более 500 первых
+
+        #region Проверка длинны списка и возвращение не более заднного колличества
         private static List<AbonsResult> GetFirstOfAbons(List<AbonsResult> abons, int count)
         {
             if (abons.Count > count)

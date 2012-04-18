@@ -32,11 +32,10 @@ namespace Diplom.MyClasses
                 double D = Distance((Point)this, (Point)cdmaBase) / 1000;
                 double L = (92.5 + 20 * Math.Log10(CDMA_Base.Ful / 1000 * D));
                 double IRF = GetIRF();
-                double I = P + CDMA_Base.G - CDMA_Base.Lf - L - GSM_Base.Lf + GSM_Base.G + IRF;
-                //double I = ToDB(CDMA_Base.P) + CDMA_Base.G - CDMA_Base.Lf - (92.5 + 20 * Math.Log10(CDMA_Base.Ful / 1000 * Distance((Point)this, (Point)cdmaBase) / 1000)) - GSM_Base.Lf + GSM_Base.G - GetIRF();
-                sum = sum + I;
+                double I = P + CDMA_Base.G - CDMA_Base.Lf - L - GSM_Base.Lf + GSM_Base.G - IRF;
+                sum = sum + ToVat(I);
             }
-            this.Isum = sum;
+            this.Isum = ToDB(sum);
         }
 
         public static double GetIRF()

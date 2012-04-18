@@ -101,7 +101,7 @@ namespace Diplom
                 statusbar.Text = "Введите верное колличество станций";
             }
             MainPanel.Cursor = Cursors.Arrow;
-            
+
         }
 
         // Обработка события нажатия на кнопку Очистить
@@ -168,8 +168,8 @@ namespace Diplom
                 }
             }
             Storage.Connecteds.Add(new Connected("Подключились сразу", connectFirstTime));
-            Storage.Connecteds.Add(new Connected("Подключились не сразу", connectSecondTime));
             Storage.Connecteds.Add(new Connected("Не подключились", orphan));
+            Storage.Connecteds.Add(new Connected("Подключились не сразу", connectSecondTime));
             #endregion
             MainPanel.Cursor = Cursors.Arrow;
             #region вывод окна с результатами
@@ -411,7 +411,7 @@ namespace Diplom
             #endregion
 
             #region параметры CDMA базовой станции
-            CDMA_Base.Ful = 887; // МГц
+            CDMA_Base.Ful = 886; // МГц
             CDMA_Base.Fdl = 830; // МГц
             CDMA_Base.P = 40;    // Ват
             CDMA_Base.G = 17;    // дБ

@@ -39,7 +39,7 @@ namespace Diplom.MyClasses
 
                 foreach (GSM_Base gsmBase in bases)
                 {
-                    if (Distance((Point)this, (Point)gsmBase) < Distance((Point)this, (Point)Parent) && BadParent.Contains(gsmBase) != true)
+                    if (Distance((Point)this, (Point)gsmBase) < Distance((Point)this, (Point)Parent) && !BadParent.Contains(gsmBase))
                     {
                         Parent = gsmBase;
                     }
@@ -57,16 +57,31 @@ namespace Diplom.MyClasses
         public void TryToConnect()
         {
             double C = this.Carier;
+            double Cvt = ToVat(C) * Math.Pow(10, 9);
             double Isum = this.Parent.Isum;
-            double N = ToDB(Point.N) + 30;
-            this.CIN = C - Isum - N;
-            if (this.CIN <= 9)
+            if (Isum == 0)
             {
-                this.Orphan = false; // Подключение
+                double N = ToDB(Point.N) + 30;
+                double Nvt = ToVat(N) * Math.Pow(10, 9);
+                double CINvt = ToVat(C) / (ToVat(N));
+                this.CIN = ToDB(ToVat(C) / (ToVat(N)));
             }
             else
             {
-                this.BadParent.Add(this.Parent); // не удалось подключиться, добавления базовой в список плохих базовых
+                double Isumvt = ToVat(Isum) * Math.Pow(10, 9);
+                double N = ToDB(Point.N) + 30;
+                double Nvt = ToVat(N) * Math.Pow(10, 9);
+                double CINvt = ToVat(C) / (ToVat(Isum) + ToVat(N));
+                this.CIN = ToDB(ToVat(C) / (ToVat(Isum) + ToVat(N)));
+            }
+
+            if (this.CIN <= 9)
+            {
+                this.BadParent.Add(this.Parent); // не удалось подключиться, добавление базовой в список плохих базовых
+            }
+            else
+            {
+                this.Orphan = false; // Подключение
             }
         }
     }

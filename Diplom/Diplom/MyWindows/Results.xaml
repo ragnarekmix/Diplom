@@ -8,7 +8,13 @@
         Title="Результаты рассчетов" Height="800" Width="900" Background="{DynamicResource Бекграунд_зеленый}" MinWidth="900" MinHeight="800" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen" MaxWidth="900" MaxHeight="800">
     <StackPanel>
         <Canvas Height="20" Margin="10">
-    		<TextBlock TextWrapping="Wrap" Width="275" FontWeight="Bold" Height="20"><Run Language="ru-ru" Text="Результаты подключения"/></TextBlock>
+    		<TextBlock TextWrapping="Wrap" Width="160" FontWeight="Bold" Height="20"><Run Language="ru-ru" Text="Результаты подключения"/></TextBlock>
+            <ComboBox x:Name="numberOfPoints" Canvas.Left="182.803" Width="50" Height="20">
+            	<ComboBoxItem Content="100" IsSelected="True"/>
+            	<ComboBoxItem Content="200"/>
+            	<ComboBoxItem Content="500"/>
+            	<ComboBoxItem Content="1000"/>
+            </ComboBox>
     		<Button x:Name="chartResultEquallyDataResult" Click="chartResultEquallyDataResult_Click" Content="=" Width="30" RenderTransformOrigin="0.467,0.602" Canvas.Left="792" Height="20"/>
     		<Button x:Name="cartResultPlus" Click="cartResultPlus_Click" Content="&gt;" Width="30" Height="20" Canvas.Left="826"/>
     		<Button x:Name="dataResultPlus" Click="dataResultPlus_Click" Content="&lt;" Width="30" RenderTransformOrigin="0.467,0.602" Canvas.Left="758" Height="20"/>
@@ -17,21 +23,21 @@
     		<Button x:Name="ShowCarierButton" Click="ShowCarierButton_Click" Content="Carier" Canvas.Left="537" Width="55" Height="20"/>
     		<Button x:Name="ShowCinButton" Click="ShowCinButton_Click" Content="C/(I+N)" Canvas.Left="596" Width="55" Height="20"/>
     		<Button x:Name="ShowBadParentsButton" Click="ShowBadParentsButton_Click" Content="Смен базовых" Canvas.Left="655" Width="90" Height="20"/>
-    		<RadioButton x:Name="LinearGraph" Canvas.Left="245.803" Height="20" ClickMode="Press" GroupName="GraphType" IsHitTestVisible="True" IsChecked="True">
+    		<RadioButton x:Name="LinearGraph" Canvas.Left="245.803" Height="20" ClickMode="Press" GroupName="GraphType" IsHitTestVisible="True">
     			<Image Height="20" Source="/Diplom;component/Images/Linear.jpg" Stretch="Fill" Width="20"/>
     		</RadioButton>
     		<RadioButton x:Name="AreaGraph" Canvas.Left="285.803" Height="20" ClickMode="Press" GroupName="GraphType" IsHitTestVisible="True">
     			<Image Height="20" Source="/Diplom;component/Images/Area.jpg" Stretch="Fill" Width="20"/>
     		</RadioButton>
-    		<RadioButton x:Name="ColumnGraph" Canvas.Left="325.803" Height="20" ClickMode="Press" GroupName="GraphType" IsHitTestVisible="True">
+            <RadioButton x:Name="ColumnGraph" Canvas.Left="325.803" Height="20" ClickMode="Press" GroupName="GraphType" IsHitTestVisible="True" IsChecked="True">
     			<Image Height="20" Source="/Diplom;component/Images/Column.jpg" Stretch="Fill" Width="20"/>
     		</RadioButton>
     	</Canvas>
         <Canvas Height="270" Margin="10,0">
-        	<charting:Chart x:Name="ChartResult" LegendTitle="Легенда" FontSize="10" Height="270" Width="430">
-        		<charting:PieSeries x:Name="ResultPie"  DependentValuePath="Value" IndependentValuePath="Label" ItemsSource="{Binding}" Foreground="{x:Null}"/>
+        	<charting:Chart x:Name="ChartResult" LegendTitle="Легенда" FontSize="12" Height="270" Width="430">
+        		<charting:PieSeries x:Name="ResultPie"  DependentValuePath="Value" IndependentValuePath="Label" ItemsSource="{Binding}"/>
         	</charting:Chart>
-        	<charting:Chart x:Name="DataResult" LegendTitle="Легенда" FontSize="10" Height="270" Width="430" Canvas.Left="0" Margin="429,0,0,0"/>
+        	<charting:Chart x:Name="DataResult" LegendTitle="Легенда" FontSize="12" Height="270" Width="430" Canvas.Left="0" Margin="429,0,0,0"/>
         </Canvas>
         <Canvas Height="20" Margin="10,10,10,0">
         	<TextBlock TextWrapping="Wrap" Width="300" FontWeight="Bold" Height="20"><Run Language="ru-ru" Text="Данные по базовым станциям "/><Run Text="GSM"/></TextBlock>
