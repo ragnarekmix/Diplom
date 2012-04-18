@@ -59,18 +59,16 @@ namespace Diplom.MyClasses
             double C = this.Carier;
             double Cvt = ToVat(C) * Math.Pow(10, 9);
             double Isum = this.Parent.Isum;
+            double Isumvt = ToVat(Isum) * Math.Pow(10, 9);
+            double N = ToDB(Point.N) + 30;
+            double Nvt = ToVat(N) * Math.Pow(10, 9);
             if (Isum == 0)
             {
-                double N = ToDB(Point.N) + 30;
-                double Nvt = ToVat(N) * Math.Pow(10, 9);
                 double CINvt = ToVat(C) / (ToVat(N));
                 this.CIN = ToDB(ToVat(C) / (ToVat(N)));
             }
             else
             {
-                double Isumvt = ToVat(Isum) * Math.Pow(10, 9);
-                double N = ToDB(Point.N) + 30;
-                double Nvt = ToVat(N) * Math.Pow(10, 9);
                 double CINvt = ToVat(C) / (ToVat(Isum) + ToVat(N));
                 this.CIN = ToDB(ToVat(C) / (ToVat(Isum) + ToVat(N)));
             }
