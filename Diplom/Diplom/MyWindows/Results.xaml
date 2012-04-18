@@ -22,7 +22,7 @@
     		<Button x:Name="ShowChildsButton" Click="ShowChildsButton_Click" Content="Абоненты" Canvas.Left="463" Width="70" Height="20"/>
     		<Button x:Name="ShowCarierButton" Click="ShowCarierButton_Click" Content="Carier" Canvas.Left="537" Width="55" Height="20"/>
     		<Button x:Name="ShowCinButton" Click="ShowCinButton_Click" Content="C/(I+N)" Canvas.Left="596" Width="55" Height="20"/>
-    		<Button x:Name="ShowBadParentsButton" Click="ShowBadParentsButton_Click" Content="Смен базовых" Canvas.Left="655" Width="90" Height="20"/>
+    		<Button x:Name="ShowBadParentsButton" Click="ShowBadParentsButton_Click" Content="Переключений" Canvas.Left="655" Width="90" Height="20"/>
     		<RadioButton x:Name="LinearGraph" Canvas.Left="245.803" Height="20" ClickMode="Press" GroupName="GraphType" IsHitTestVisible="True">
     			<Image Height="20" Source="/Diplom;component/Images/Linear.jpg" Stretch="Fill" Width="20"/>
     		</RadioButton>
@@ -48,13 +48,13 @@
         <DataGrid x:Name="GridResultBases" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CanUserDeleteRows="False" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" CanUserReorderColumns="False" Height="180" >
             <DataGrid.Columns>
             	<DataGridTextColumn Binding="{Binding number}" Header="№" MinWidth="30" FontSize="13.333" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding isum}" Header="I суммарное" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding childs}" Header="Абонентов" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding ful}" Header="Частота UL" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding fdl}" Header="Частота DL" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding power}" Header="Мощность" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding g}" Header="Коэф. усиления" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding lf}" Header="Ослабление фидера" MinWidth="134" FontSize="13.333" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding isum}" Header="I суммарное [дБ]" MinWidth="109" FontSize="13.333" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding childs}" Header="Абонентов" MinWidth="109" FontSize="13.333" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding ful}" Header="Частота UL [МГц]" MinWidth="109" FontSize="13.333" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding fdl}" Header="Частота DL [МГц]" MinWidth="109" FontSize="13.333" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding power}" Header="Мощность [Вт]" MinWidth="109" FontSize="13.333" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding g}" Header="Коэф. усиления [дБ]" MinWidth="109" FontSize="13.333" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding lf}" Header="Ослабление фидера [дБ]" MinWidth="109" FontSize="13.333" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <Canvas Height="20" Margin="10,0">
@@ -66,14 +66,14 @@
         <DataGrid x:Name="GridResultAbons" Margin="10" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" CanUserReorderColumns="False" Height="180">
             <DataGrid.Columns>
             	<DataGridTextColumn Binding="{Binding number}" Header="№" MinWidth="30" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding connected}" Header="Подключен" MinWidth="134" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding carier}" Header="Carier" MinWidth="134" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding cin}" Header="C/(I+N)" MinWidth="134" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding parent}" Header="Родительская станция" MinWidth="134" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding bedparents}" Header="Смен базовых" MinWidth="134" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding power}" Header="Мощность" MinWidth="134" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding g}" Header="Коэф. усиления" MinWidth="134" IsReadOnly="True"/>
-            	<DataGridTextColumn Binding="{Binding lf}" Header="Ослабление фидера" MinWidth="134" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding connected}" Header="Подключен" MinWidth="88" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding carier}" Header="Carier [дБ]" MinWidth="88" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding cin}" Header="C/(I+N) [дБ]" MinWidth="88" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding parent}" Header="№ станции" MinWidth="88" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding bedparents}" Header="Переключений" MinWidth="88" IsReadOnly="True"/>
+            	<DataGridTextColumn Binding="{Binding power}" Header="Мощность [Вт]" MinWidth="88" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding g}" Header="Коэф. усиления [дБ]" MinWidth="88" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding lf}" Header="Ослабление фидера [дБ]" MinWidth="88" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>
